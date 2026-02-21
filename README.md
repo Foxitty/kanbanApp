@@ -50,23 +50,14 @@ No arquivo `.env`, ajuste as configurações do PostgreSQL:
 
 ```env
 DB_CONNECTION=pgsql
-DB_HOST=pg_database
+DB_HOST=pgsql
 DB_PORT=5432
 DB_DATABASE=kanban_app
 DB_USERNAME=sail
 DB_PASSWORD=password
 ```
 
-### 4. Inicie o ambiente com Laravel Sail
-
-**Laravel Sail** é uma camada de abstração que permite rodar o Laravel em containers Docker sem necessidade de configurar PHP, PostgreSQL, Redis, etc. localmente.
-
-```bash
-# Inicie os containers (PHP, PostgreSQL, Redis, etc.)
-./vendor/bin/sail up -d
-```
-
-### 5. Instale as dependências
+### 4. Instale as dependências
 
 ```bash
 # Instale as dependências PHP
@@ -74,9 +65,15 @@ DB_PASSWORD=password
 
 # Instale as dependências JavaScript
 ./vendor/bin/sail npm install
+```
 
-# Compile os assets (IMPORTANTE: necessário para o funcionamento do frontend)
-./vendor/bin/sail npm run build
+### 5. Inicie o ambiente com Laravel Sail
+
+**Laravel Sail** é uma camada de abstração que permite rodar o Laravel em containers Docker sem necessidade de configurar PHP, PostgreSQL, Redis, etc. localmente.
+
+```bash
+# Inicie os containers (PHP, PostgreSQL, Redis, etc.)
+./vendor/bin/sail up -d
 ```
 
 ### 6. Configure o banco de dados
@@ -89,9 +86,13 @@ DB_PASSWORD=password
 ./vendor/bin/sail artisan migrate
 ```
 
-### 7. Inicie o servidor
+### 7. Compile e Inicie o servidor
 
 ```bash
+
+# Compile os assets (IMPORTANTE: necessário para o funcionamento do frontend)
+./vendor/bin/sail npm run build
+
 # Inicie o servidor de desenvolvimento
 ./vendor/bin/sail artisan serve
 ```

@@ -17,65 +17,65 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
-        :root {
-            --primary-color: #6366f1;
-        }
+    :root {
+        --primary-color: #6366f1;
+    }
 
-        .logo-box {
-            background: var(--primary-color);
-            color: white;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            font-weight: 800;
-        }
+    .logo-box {
+        background: var(--primary-color);
+        color: white;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        font-weight: 800;
+    }
 
-        .logo-text {
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            font-size: 1.25rem;
-        }
+    .logo-text {
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        font-size: 1.25rem;
+    }
 
-        #theme-master-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1050;
-            border: none;
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
+    #theme-master-toggle {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1050;
+        border: none;
+        color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
 
-        #theme-master-toggle:hover {
-            transform: scale(1.1);
-        }
+    #theme-master-toggle:hover {
+        transform: scale(1.1);
+    }
 
-        .cursor-pointer {
-            cursor: pointer;
-        }
+    .cursor-pointer {
+        cursor: pointer;
+    }
 
-        .btn-xs {
-            padding: 0.1rem 0.4rem;
-            font-size: 0.75rem;
-        }
+    .btn-xs {
+        padding: 0.1rem 0.4rem;
+        font-size: 0.75rem;
+    }
     </style>
 
     <script>
-        (function() {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-bs-theme', savedTheme);
-        })();
+    (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-bs-theme', savedTheme);
+    })();
     </script>
 </head>
 
@@ -91,7 +91,8 @@
             <div class="container-fluid px-4">
                 <a href="{{ route('dashboard') }}" class="d-flex align-items-center gap-2 text-decoration-none">
                     <div class="logo-box">K</div>
-                    <span class="logo-text" style="color: #0a6807; text-shadow: 2px 2px 0 -2px -2px 0 #ece906, 2px -2px 0 #e6ff05, -2px 2px 0 #fbff07;">
+                    <span class="logo-text"
+                        style="color: #0a6807; text-shadow: 2px 2px 0 -2px -2px 0 #ece906, 2px -2px 0 #e6ff05, -2px 2px 0 #fbff07;">
                         KANBAN<span style="color: var(--primary-color)">APP</span>
                     </span>
                 </a>
@@ -102,7 +103,7 @@
             </div>
         </nav>
 
-        <main class="flex-grow-1 p-0"> {{-- Ajustado para ocupar melhor o espaço --}}
+        <main class="flex-grow-1 p-0">
             {{ $slot }}
         </main>
     </div>

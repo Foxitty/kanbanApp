@@ -13,7 +13,7 @@
         <div class="row g-4">
             @forelse($boards ?? [] as $board)
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="auth-card card-board h-100 position-relative border shadow-sm p-4">
+                <div class="auth-card card-board h-100 position-relative border shadow-lg p-4">
 
                     @if($board->user_id === auth()->id())
                     <div class="position-absolute top-0 end-0 p-3 d-flex gap-2">
@@ -33,7 +33,8 @@
                         <h4 class="fw-bold mb-1">{{ $board->name }}</h4>
                         <p class="text-muted small mb-4">Por: {{ $board->user->name }}</p>
 
-                        <a href="{{ route('kanban.index', $board->slug) }}" class="btn btn-link p-0 fw-bold text-decoration-none d-flex align-items-center gap-2">
+                        <a href="{{ route('kanban.index', $board->slug) }}"
+                            class="btn btn-link p-0 fw-bold text-decoration-none d-flex align-items-center gap-2">
                             Acessar Quadro →
                         </a>
                     </div>
@@ -56,10 +57,12 @@
                         <input type="hidden" id="boardSlug">
                         <div class="mb-4">
                             <label class="form-label fw-bold small text-uppercase">Nome do Quadro</label>
-                            <input type="text" id="boardName" class="form-control py-2" placeholder="Ex: Marketing" required>
+                            <input type="text" id="boardName" class="form-control py-2" placeholder="Ex: Marketing"
+                                required>
                         </div>
                         <div class="d-flex justify-content-end gap-2">
-                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal">Cancelar</button>
                             <button type="submit" id="submitBtn" class="btn btn-outline-primary px-4">Criar</button>
                         </div>
                     </form>
@@ -69,8 +72,8 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            window.setupDashboard('{{ csrf_token() }}');
-        });
+    document.addEventListener('DOMContentLoaded', () => {
+        window.setupDashboard('{{ csrf_token() }}');
+    });
     </script>
 </x-app-layout>
