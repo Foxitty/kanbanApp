@@ -37,7 +37,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         $board = Board::create([
             'name' => $request->name,
-            'slug' => Str::slug($request->name, '_'), // Gera a URL: teste_para_teste
+            'slug' => Str::slug($request->name, '_'),
             'user_id' => auth()->id()
         ]);
 
