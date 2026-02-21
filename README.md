@@ -12,12 +12,13 @@ Este é um sistema de quadro Kanban que permite:
 - **Comentários**: Adicione comentários e respostas em threads nas tarefas
 - **Arrastar e Soltar**: Reorganize tarefas e colunas intuitivamente
 - **Autenticação**: Sistema de login e registro completo
+- **Temas**: Escolha o se prefere o tema do sistema claro ou escuro
 
 ## 🛠️ Tecnologias Utilizadas
 
 - **Backend**: Laravel 11
 - **Frontend**: Blade Templates + Bootstrap 5
-- **JavaScript**: SortableJS para interatividade
+- **JavaScript**: Jquery e SortableJS para interatividade
 - **Banco de Dados**: PostgreSQL
 - **Containerização**: Docker + Laravel Sail
 
@@ -147,8 +148,6 @@ Abra seu navegador e acesse: [http://localhost](http://localhost)
 ├── routes/                   # Rotas da aplicação
 ├── database/
 │   ├── migrations/           # Migrations do banco de dados
-│   └── seeders/              # Seeders de dados
-└── public/                   # Arquivos estáticos
 ```
 
 ## 📊 Modelos de Dados
@@ -176,7 +175,7 @@ Abra seu navegador e acesse: [http://localhost](http://localhost)
 - Conteúdo
 - Usuário criador
 - Relacionamento com Task
-- Respostas (threads)
+- Respostas para usuarios (threads)
 
 ## 🔧 Personalização
 
@@ -190,5 +189,6 @@ const palette = ['#6366f1', '#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#8b5cf6
 ### Estilos
 Os estilos principais estão em:
 - `resources/css/app.css` - Estilos base
+- `resources/js/app.js` - Js com os codigos em Jquery
 - `tailwind.config.js` - Configuração do Tailwind CSS (para componentes do Laravel Breeze)
 - `resources/views/layouts/app.blade.php` - Estilos personalizados do Bootstrap
