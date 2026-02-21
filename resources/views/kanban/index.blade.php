@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div id="kanban-board" class="kanban-container pb-3 overflow-x-auto">
+        <div id="kanban-board" class="kanban-container pb-3">
             @foreach($board->categories->sortBy('position') as $category)
             <div class="kanban-column shadow-sm"
                 style="border-top-color: {{ $category->color }}"
