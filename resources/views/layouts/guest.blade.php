@@ -31,7 +31,7 @@
         <div class="text-center mb-4">
             <div class="d-flex align-items-center justify-content-center gap-2">
                 <div class="logo-box">K</div>
-                <span class="logo-text">
+                <span class="logo-text" style="color: #0a6807; text-shadow: 2px 2px 0 -2px -2px 0 #ece906, 2px -2px 0 #e6ff05, -2px 2px 0 #fbff07;">
                     KANBAN<span style="color: var(--primary-color)">APP</span>
                 </span>
             </div>

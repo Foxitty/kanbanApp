@@ -89,9 +89,9 @@
 
         <nav class="navbar navbar-expand-lg border-bottom sticky-top bg-body py-3">
             <div class="container-fluid px-4">
-                <a href="{{ route('dashboard') }}" class="d-flex align-items-center gap-2 text-decoration-none text-white">
+                <a href="{{ route('dashboard') }}" class="d-flex align-items-center gap-2 text-decoration-none">
                     <div class="logo-box">K</div>
-                    <span class="logo-text">
+                    <span class="logo-text" style="color: #0a6807; text-shadow: 2px 2px 0 -2px -2px 0 #ece906, 2px -2px 0 #e6ff05, -2px 2px 0 #fbff07;">
                         KANBAN<span style="color: var(--primary-color)">APP</span>
                     </span>
                 </a>
