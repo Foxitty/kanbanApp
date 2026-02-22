@@ -46,14 +46,14 @@
                             class="btn btn-sm action-btn-hover p-1">
                             <i class="fa-solid fa-pencil" style="font-size: 12px;"></i>
                         </button>
-                        <button onclick="event.stopPropagation(); deleteCategory({{ $category->id }}, {{ $category->tasks->count() }})"
+                        <button onclick="event.stopPropagation(); deleteCategory({{ $category->id }}, this)"
                             class="btn btn-sm action-btn-hover p-1 text-danger">
                             <i class="fa-solid fa-trash-can" style="font-size: 12px;"></i>
                         </button>
                     </div>
                 </div>
 
-                <div class="task-list px-3 flex-grow-1 overflow-y-auto custom-scrollbar"
+                <div class="task-list px-3 pt-1 flex-grow-1 overflow-y-auto custom-scrollbar"
                     data-category-id="{{ $category->id }}"
                     style="min-height: 100px;">
 

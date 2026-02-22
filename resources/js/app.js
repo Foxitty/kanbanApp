@@ -23,6 +23,7 @@ $(document).ready(function() {
         const currentTheme = $html.attr('data-bs-theme');
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         $html.attr('data-bs-theme', newTheme);
+        $html.toggleClass('dark', newTheme === 'dark');
         localStorage.setItem('theme', newTheme);
         updateUI(newTheme);
     });
@@ -207,9 +208,23 @@ window.initKanban = function(boardId, csrfToken, palette) {
     window.openCategoryModal = () => { $('#editCatId').val(''); $('#categoryForm')[0].reset(); $('#catModalTitle').text('Nova Coluna'); catModal.show(); };
     window.editCategory = (cat) => { $('#editCatId').val(cat.id); $('#catName').val(cat.name); $('#catColor').val(cat.color); $('#catModalTitle').text('Editar Coluna'); catModal.show(); };
 
-    window.deleteCategory = (id, count) => {
-        if (count > 0) return alert('Remova os cards antes de excluir a coluna.');
-        if (confirm('Excluir esta coluna?')) $.post(`/categories/${id}`, { _method: 'DELETE', _token: csrfToken }, () => location.reload());
+    window.deleteCategory = (id, btn) => {
+        const column = btn instanceof HTMLElement ? btn.closest('.kanban-column') : null;
+        const taskCount = column ? column.querySelectorAll('.task-card').length : 0;
+        if (taskCount > 0) {
+            alert('Remova os cards antes de excluir a coluna.');
+            return;
+        }
+        if (confirm('Excluir esta coluna?')) {
+            $.post(`/categories/${id}`, { 
+                _method: 'DELETE', 
+                _token: csrfToken 
+            }, function() {
+                location.reload();
+            }).fail(function() {
+                alert('Erro ao excluir a coluna no servidor.');
+            });
+        }
     };
 
     window.addTask = (id) => { $('#taskCategoryId').val(id); $('#createTaskForm')[0].reset(); taskModal.show(); };
