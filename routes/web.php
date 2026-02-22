@@ -23,7 +23,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     //Dashboard
     Route::get('/dashboard', function () {
         $boards = Board::with('user')->latest()->get();
-        return view('dashboard', compact('boards'));
+        return view('kanban.dashboard', compact('boards'));
     })->name('dashboard');
 
     //Perfil     
